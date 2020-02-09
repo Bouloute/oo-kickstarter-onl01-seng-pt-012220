@@ -9,8 +9,6 @@ class Project
   def add_backer(backer)
     @backers.push(backer)
 
-    if backer.backed_projects.find{|project| project == self} == nil
-      backer.back_project(self)
-    end
+    backer.back_project(self) unless backer.back_project.include?(self)
   end
 end
