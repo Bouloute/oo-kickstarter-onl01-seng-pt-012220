@@ -9,8 +9,6 @@ class Backer
 
   def back_project(project)
     @backed_projects.push(project)
-    #find or add backer to project
-    #binding.pry
     project.add_backer(self) unless project.backers.include?(self)
   end
 
