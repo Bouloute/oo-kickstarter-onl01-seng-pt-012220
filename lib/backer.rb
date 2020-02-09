@@ -11,9 +11,7 @@ class Backer
     @backed_projects.push(project)
     #find or add backer to project
     #binding.pry
-    if project.backers.find{|backer| backer == self} == nil
-      project.add_backer(self)
-    end
+    project.add_backer(self) unless project.backers.include?(self)
   end
 
 end
