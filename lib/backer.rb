@@ -10,5 +10,4 @@ class Backer
     @backed_projects.push(project)
     project.add_backer(self) unless project.backers.include?(self)
   end
-
 end
